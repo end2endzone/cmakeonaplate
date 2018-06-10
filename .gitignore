@@ -1,2 +1,5 @@
 /client/fooclient/build
 /library/build
+/submodules
+/installs
+/library/installs
