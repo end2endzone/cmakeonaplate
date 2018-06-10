@@ -88,7 +88,12 @@ include_directories(${FOOLIB_INCLUDE_DIR}                 # public header files
 
 # Subprojects
 add_subdirectory(src/FooLib)
-add_subdirectory(test)
+
+# unit tests
+option(FOOLIB_BUILD_TEST "Build all FooLib's unit tests" OFF)
+if(FOOLIB_BUILD_TEST)
+  add_subdirectory(test)
+endif()
 
 ##############################################################################################################################################
 # Support for static and shared library

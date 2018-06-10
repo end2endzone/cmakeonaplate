@@ -7,7 +7,9 @@ add_executable(footest
   ${FOOLIB_EXPORT_HEADER}
   ${FOOLIB_VERSION_HEADER}
   ${FOOLIB_CONFIG_HEADER}
-  test.cpp
+  main.cpp
+  TestFoo.h
+  TestFoo.cpp
 )
 
 # Force CMAKE_DEBUG_POSTFIX for executables

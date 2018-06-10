@@ -1,10 +1,7 @@
 TODO:
-* Fix shared library where client requires the foolib.dll in $(OutDir) (or in PATH)
 * Create a client that uses foolib_DIR variable (instead of CMAKE_INSTALL_PREFIX) to allow find_package() to work.
 * Create a client that uses CMAKE_MODULE_PATH variable to search for Findfoolib.cmake.
 * Integrate GTest with submodule compiled independently using https://stackoverflow.com/a/44649433
-* Create an option for building unit tests.
-* Create a Test Suite for footest instead of a single test.
 
 
 CHECKLIST:
