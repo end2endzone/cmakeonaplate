@@ -1,12 +1,6 @@
 file(GLOB_RECURSE headers ${CMAKE_SOURCE_DIR}/include/*.h)
 
-set (GTEST_ROOT "C:/Program Files (x86)/googletest-distribution_static")
 find_package(GTest)
-message(GTest_FOUND= ${GTest_FOUND})
-message(GTEST_LIBRARY= ${GTEST_LIBRARY})
-message(GTEST_INCLUDE_DIR= ${GTEST_INCLUDE_DIR})
-message(GTEST_MAIN_LIBRARY= ${GTEST_MAIN_LIBRARY})
-message(GTEST_LIBRARIES= ${GTEST_LIBRARIES})
 
 add_executable(footest
   ${headers}

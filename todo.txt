@@ -5,7 +5,6 @@ TODO:
 * Create a client that uses CMAKE_MODULE_PATH variable to search for Findfoolib.cmake.
 * Integrate GTest with submodule compiled independently using https://stackoverflow.com/a/44649433
 * Create an option for building unit tests.
-* Move files from /client/fooclient to /client. Don't really need to know about 'fooclient'.
 * Create a Test Suite for footest instead of a single test.
 
 DONE:

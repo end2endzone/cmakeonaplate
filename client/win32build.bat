@@ -6,6 +6,7 @@ set FOOLIB_INSTALL_DIR=%cd%\..\installs
 
 mkdir build >NUL 2>NUL
 cd build
+
 cmake -DCMAKE_INSTALL_PREFIX=%FOOLIB_INSTALL_DIR% ..
 
 pause
