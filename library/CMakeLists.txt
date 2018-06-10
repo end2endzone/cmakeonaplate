@@ -37,12 +37,26 @@ set(   LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
 ##############################################################################################################################################
 
 # Product version according to Semantic Versioning v2.0.0 https://semver.org/
-set(FOOLIB_VERSION_MAJOR 3)
-set(FOOLIB_VERSION_MINOR 6)
-set(FOOLIB_VERSION_PATCH 9)
+set(FOOLIB_VERSION_MAJOR 0)
+set(FOOLIB_VERSION_MINOR 1)
+set(FOOLIB_VERSION_PATCH 0)
 set(FOOLIB_VERSION ${FOOLIB_VERSION_MAJOR}.${FOOLIB_VERSION_MINOR}.${FOOLIB_VERSION_PATCH})
+
+# version.h file
 set(FOOLIB_VERSION_HEADER ${CMAKE_BINARY_DIR}/include/FooLib/version.h)
+message("Generating ${FOOLIB_VERSION_HEADER}...")
 configure_file( ${CMAKE_SOURCE_DIR}/src/FooLib/version.h.in ${FOOLIB_VERSION_HEADER} )
+
+# config.h file
+set(FOOLIB_CONFIG_HEADER ${CMAKE_BINARY_DIR}/include/FooLib/config.h)
+message("Generating ${FOOLIB_CONFIG_HEADER}...")
+if (BUILD_SHARED_LIBS)
+  set(FOOLIB_BUILD_TYPE_CPP_DEFINE "#define FOOLIB_BUILT_AS_SHARED")
+else()
+  set(FOOLIB_BUILD_TYPE_CPP_DEFINE "#define FOOLIB_BUILT_AS_STATIC")
+endif()
+configure_file( ${CMAKE_SOURCE_DIR}/src/FooLib/config.h.in ${FOOLIB_CONFIG_HEADER} )
+set(FOOLIB_BUILD_TYPE_CPP_DEFINE)
 
 # Define installation directories
 set(FOOLIB_INSTALL_BIN_DIR      "bin")
@@ -114,6 +128,7 @@ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/cmake/foolib-config-version.cmake DEST
 install(DIRECTORY ${CMAKE_SOURCE_DIR}/include/FooLib DESTINATION ${FOOLIB_INSTALL_INCLUDE_DIR})
 install(FILES ${FOOLIB_EXPORT_HEADER}
               ${FOOLIB_VERSION_HEADER}
+              ${FOOLIB_CONFIG_HEADER}
               DESTINATION ${FOOLIB_INSTALL_INCLUDE_DIR}/FooLib)
 install(FILES ${CMAKE_SOURCE_DIR}/cmake/foolib-config.cmake DESTINATION ${FOOLIB_INSTALL_CMAKE_DIR})
 install(EXPORT foolib-targets DESTINATION ${FOOLIB_INSTALL_CMAKE_DIR})

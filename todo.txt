@@ -1,16 +1,10 @@
 TODO:
 * Fix shared library where client requires the foolib.dll in $(OutDir) (or in PATH)
-* Create a generated config.h file which defines FOOLIB_BUILT_AS_STATIC and FOOLIB_BUILT_AS_SHARED
 * Create a client that uses foolib_DIR variable (instead of CMAKE_INSTALL_PREFIX) to allow find_package() to work.
 * Create a client that uses CMAKE_MODULE_PATH variable to search for Findfoolib.cmake.
 * Integrate GTest with submodule compiled independently using https://stackoverflow.com/a/44649433
 * Create an option for building unit tests.
 * Create a Test Suite for footest instead of a single test.
-
-DONE:
-* Implement support for `find_package(foolib 1.2.3 REQUIRED)`
-* Create a version.h file along with foo_export.h
-* Implemented find_package(GTest) using set(GTEST_ROOT) in footest
 
 
 CHECKLIST:
@@ -28,4 +22,3 @@ CHECKLIST:
 # https://foonathan.net/blog/2016/03/03/cmake-install.html
 # https://rix0r.nl/blog/2015/08/13/cmake-guide/#importing-external-libraries
 # 
-

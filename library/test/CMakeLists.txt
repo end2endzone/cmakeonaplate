@@ -6,6 +6,7 @@ add_executable(footest
   ${headers}
   ${FOOLIB_EXPORT_HEADER}
   ${FOOLIB_VERSION_HEADER}
+  ${FOOLIB_CONFIG_HEADER}
   test.cpp
 )
 
