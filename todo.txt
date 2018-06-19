@@ -1,7 +1,14 @@
 TODO:
 * Create a client that uses CMAKE_MODULE_PATH variable to search for Findfoolib.cmake.
 * Integrate GTest with submodule compiled independently using https://stackoverflow.com/a/44649433
-
+* Remove duplicated define FOOLIB_BUILT_AS_STATIC from foo_export.h.
+  Modify config.h to use `#ifdef FOOLIB_BUILT_AS_SHARED` then `#include "export.h"` statements.
+  Make foo.h always include `config.h` and add the following to foo.h:
+```
+#ifndef FOOLIB_EXPORT
+#  define FOOLIB_EXPORT
+#endif
+```
 
 CHECKLIST:
 # See the following for reference:

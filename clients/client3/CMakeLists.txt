@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.0)
 project(FooClient)
 
+# tell CMake to also search for modules in ${PROJECT_SOURCE_DIR}/cmake
 list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
 
 find_package(foolib 3.6.5 REQUIRED)
