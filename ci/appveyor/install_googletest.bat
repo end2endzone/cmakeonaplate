@@ -2,7 +2,7 @@
 
 :: Allow the script to be launch locally or from AppVeyor
 cd /d %~dp0
-cd ..\..\..
+cd ..\..
 set APPVEYOR_BUILD_FOLDER_LOCAL=%cd%
 
 :: Detect if script is launch manually or from AppVeyor.
