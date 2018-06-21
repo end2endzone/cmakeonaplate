@@ -32,7 +32,7 @@ mkdir build >NUL 2>NUL
 cd build
 set GTEST_ROOT=%APPVEYOR_BUILD_FOLDER%\installs
 cmake -DCMAKE_INSTALL_PREFIX=%GTEST_ROOT% -Dgtest_force_shared_crt=ON ..
-cmake --build .
+cmake --build . --config Release
 echo.
 
 echo ============================================================================
