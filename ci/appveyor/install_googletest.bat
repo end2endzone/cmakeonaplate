@@ -38,5 +38,5 @@ echo.
 echo ============================================================================
 echo Installing into %GTEST_ROOT%
 echo ============================================================================
-cmake --build . --target INSTALL
+cmake --build . --config Release --target INSTALL
 echo.
