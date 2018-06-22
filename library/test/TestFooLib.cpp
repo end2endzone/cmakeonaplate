@@ -1,5 +1,5 @@
-#include "TestFoo.h"
-#include "FooLib\foo.h"
+#include "TestFooLib.h"
+#include "FooLib\foolib.h"
 
 namespace test
 {
@@ -12,9 +12,9 @@ namespace test
   {
   }
   //--------------------------------------------------------------------------------------------------
-  TEST(TestFoo, TestHello)
+  TEST(TestFoo, TestSayHello)
   {
-    foo();
+    sayHello();
   }
   //--------------------------------------------------------------------------------------------------
 } // End namespace test

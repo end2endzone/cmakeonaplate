@@ -5,7 +5,7 @@ add_library(foolib
   ${FOOLIB_EXPORT_HEADER}
   ${FOOLIB_VERSION_HEADER}
   ${FOOLIB_CONFIG_HEADER}
-  foo.cpp
+  foolib.cpp
 )
 
 target_include_directories(foolib PUBLIC

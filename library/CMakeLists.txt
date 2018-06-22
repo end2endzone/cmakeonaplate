@@ -83,7 +83,7 @@ endif()
 set( FOOLIB_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/include )
 include_directories(${FOOLIB_INCLUDE_DIR}                 # public header files
                     ${CMAKE_BINARY_DIR}/include           # for version.h included from *.cpp files
-                    ${CMAKE_BINARY_DIR}/include/FooLib    # for foo_export.h included by public foo.h
+                    ${CMAKE_BINARY_DIR}/include/FooLib    # for export.h included by public foolib.h
 )
 
 # Subprojects

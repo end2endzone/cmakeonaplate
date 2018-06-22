@@ -8,15 +8,15 @@ add_executable(footest
   ${FOOLIB_VERSION_HEADER}
   ${FOOLIB_CONFIG_HEADER}
   main.cpp
-  TestFoo.h
-  TestFoo.cpp
+  TestFooLib.h
+  TestFooLib.cpp
 )
 
 # Force CMAKE_DEBUG_POSTFIX for executables
 set_target_properties(footest PROPERTIES DEBUG_POSTFIX ${CMAKE_DEBUG_POSTFIX})
 
 target_include_directories(footest PUBLIC ${GTEST_INCLUDE_DIR})
-
+add_dependencies(footest foolib)
 target_link_libraries(footest foolib ${GTEST_LIBRARIES})
 
 install(TARGETS footest
