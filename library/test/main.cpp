@@ -1,5 +1,4 @@
 #include "FooLib/foolib.h"
-#include "FooLib/version.h"
 
 #include <gtest/gtest.h>
 

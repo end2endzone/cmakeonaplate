@@ -99,9 +99,9 @@ endif()
 # Support for static and shared library
 ##############################################################################################################################################
 
-set(FOOLIB_EXPORT_HEADER_FILENAME "export.h")
-set(FOOLIB_EXPORT_HEADER ${CMAKE_BINARY_DIR}/include/FooLib/${FOOLIB_EXPORT_HEADER_FILENAME})
 if (BUILD_SHARED_LIBS)
+  set(FOOLIB_EXPORT_HEADER_FILENAME "export.h")
+  set(FOOLIB_EXPORT_HEADER ${CMAKE_BINARY_DIR}/include/FooLib/${FOOLIB_EXPORT_HEADER_FILENAME})
   message("Generating ${FOOLIB_EXPORT_HEADER_FILENAME} for shared library...")
   include (GenerateExportHeader) 
   GENERATE_EXPORT_HEADER(foolib 
@@ -110,12 +110,6 @@ if (BUILD_SHARED_LIBS)
                EXPORT_FILE_NAME ${FOOLIB_EXPORT_HEADER} 
                STATIC_DEFINE FOOLIB_BUILT_AS_STATIC
   )
-else()
-  message("Generating ${FOOLIB_EXPORT_HEADER_FILENAME} for static library...")
-
-  # Copy export_static.h as ${FOOLIB_EXPORT_HEADER}
-  # Use configure_file() instead of file() as configure_file() automatically handles build dependencies.
-  configure_file( ${CMAKE_SOURCE_DIR}/src/FooLib/export_static.h.in ${FOOLIB_EXPORT_HEADER} )
 endif()
 
 ##############################################################################################################################################
