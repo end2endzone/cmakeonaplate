@@ -42,13 +42,11 @@ The following instructions show how to use the CMake template.
 
 
 ## Philosophy ##
-The CMake scripts are written for an hypothetical C++ libray called `FooLib`. The FooLib project is designed to be simple and not complicated to understand.
-
-The project is structured in 2 different parts: the c++ library and sample library clients.
+The CMake scripts are written for an hypothetical C++ libray called `FooLib`. The FooLib project is simple and not complicated to understand. The project is structured in 2 different parts: the c++ library and library clients.
 
 The library defines two targets: `foolib` and `footest`. The target `foolib` exposes the `sayHello()` function and the target `footest` has a single unit test which runs the `sayHello()` function.
 
-The sample library clients show multiple examples of how to use a deployed binary version of the c++ library.
+The library clients show multiple examples of how to use a deployed binary version of the c++ library.
 
 
 
@@ -79,8 +77,8 @@ As a reference, the following files should be updated:
 # Features #
 
 ## Build static or shared library ##
-The FooLib's library supoports both static or shared library through the native CMake variable `BUILD_SHARED_LIBS`.
-By default, the library is build as a static library. To build the library as shared use the following command at configuration time:
+The FooLib's library supports both static or shared library through the native CMake variable `BUILD_SHARED_LIBS`.
+By default, the library is build as static. To build the library as shared use the following command at configuration time:
 ```cmake
 cmake -DBUILD_SHARED_LIBS=ON ..
 ```
@@ -92,7 +90,7 @@ On installation, the include and library files are installed under a directory c
 
 The FooLib's library version matches the same version as the CMake boilerplate.
 
-Note that binary files are not versionned.
+Note that binary files are not versionned. The files installed in the `bin` directory often needs to be executed from the PATH environment variable and must not contains version number.
 
 
 ## Deploy Debug and Release binaries ##
@@ -111,6 +109,8 @@ The file `version.h` contains macros which defines the current library version i
 
 The file `config.h` contains macros which defines the compilation mode and options of the library. For instance, `#define FOOLIB_BUILT_AS_STATIC` or `#define FOOLIB_BUILT_AS_SHARED`
 
+The file `export.h` contains macros for facilitating the export of symbol when building the library as a shared library.
+
 
 ## Unit test ##
 
@@ -126,7 +126,7 @@ cmake -DFOOLIB_BUILD_TEST=ON ..
 
 ## Installation ##
 
-The FooLib's project defines a specific target to install the compiled binaries on the current system. This allows easy deployment and following software best practices. To install the compiled binaries, run the following command:
+The FooLib's project defines a specific target to install the compiled binaries on the current system. This allows easy deployment and follows software best practices. To install the compiled binaries, run the following command:
 ```cmake
 cmake --build . --config <config> --target install
 ```
@@ -139,14 +139,12 @@ cmake -DCMAKE_INSTALL_PREFIX=<some_directory> ..
 
 On Windows platform, the default installation path is `C:\Program Files (x86)\FooLib`. On Linux platform, the default installation path is `/usr/local`.
 
-
-
 For convenience reasons, the FooLib's library version matches the same version as the CMake boilerplate.
 
 
 ### Installation file structure ###
 
-When exeecuting the `install` target, the following files will be installed on the system:
+When executing the `install` target, the following files will be installed on the system (assuming a Windows system):
 
 ```
 C:\PROGRAM FILES (X86)\FOOLIB
@@ -158,7 +156,7 @@ C:\PROGRAM FILES (X86)\FOOLIB
 |       \---FooLib
 |               config.h
 |               export.h
-|               foo.h
+|               foolib.h
 |               version.h
 |
 \---lib
@@ -172,26 +170,21 @@ C:\PROGRAM FILES (X86)\FOOLIB
 
 ## Clients ##
 
-The sample clients show multiple examples of how a library can find FooLib's deployed binary files.
-
-
-The sample clients show multiple examples of project that have dependencies on FooLib's deployed binary files.
-
-
-The sample clients show multiple examples
-
-
-Each examples show different ways of 'finding' the library's `include` directory and library files.
-
-The following section explains different strategies for a client executable to 'find' the FooLib library using the `find_package()` command.
+The library clients show multiple examples of how another library (that have a dependency on FooLib) can find FooLib's include and binary files. The following section explains different strategies for a client executable to 'find' the FooLib library using the `find_package()` command.
 
 For each of the following examples, assume one wants to compile the `fooexe` executable target which have a dependency to the FooLib library.
 
-The `client1` assumes that 
+#### Client #1 ####
 
+The `client1` assumes that client1 and FooLib's intallation directory are identical. In other words, both projects are configured with the same `CMAKE_INSTALL_PREFIX` variable value. See the client's [README](clients/client1/README.md) file for details.
 
-### Client #1 ###
+#### Client #2 ####
 
+The `client2` explicitly specify FooLib's intallation directory at configuration time using `foolib_DIR` variable. See the client's [README](clients/client2/README.md) file for details.
+
+#### Client #3 ####
+
+The `client3` uses the custom CMake module `Findfoolib.cmake` which searches the FooLib's include and library files through all known installation directories. See the client's [README](clients/client3/README.md) file for details.
 
 
 
