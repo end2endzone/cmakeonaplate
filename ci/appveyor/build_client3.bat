@@ -33,3 +33,7 @@ echo Compiling...
 echo ============================================================================
 cmake --build . --config Release
 echo.
+
+::Delete all temporary environment variable created
+set GTEST_ROOT=
+set PROGRAMFILES_INSTALL_DIR=

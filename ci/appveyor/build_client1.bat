@@ -32,3 +32,6 @@ echo Compiling...
 echo ============================================================================
 cmake --build . --config Release
 echo.
+
+::Delete all temporary environment variable created
+set MERGED_INSTALL_DIR=

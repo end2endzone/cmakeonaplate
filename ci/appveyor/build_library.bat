@@ -14,7 +14,6 @@ set APPVEYOR_BUILD_FOLDER_LOCAL=
 
 
 set GTEST_ROOT=%APPVEYOR_BUILD_FOLDER%\submodules\googletest\install
-set INSTALL_LOCATION=%APPVEYOR_BUILD_FOLDER%\library\install
 
 echo ============================================================================
 echo Generating...
@@ -22,7 +21,7 @@ echo ===========================================================================
 cd /d %APPVEYOR_BUILD_FOLDER%
 mkdir build >NUL 2>NUL
 cd build
-cmake -DCMAKE_INSTALL_PREFIX=%INSTALL_LOCATION%/ -DFOOLIB_BUILD_TEST=ON -DBUILD_SHARED_LIBS=OFF ..\library
+cmake -DCMAKE_INSTALL_PREFIX=%APPVEYOR_BUILD_FOLDER%\library\install -DFOOLIB_BUILD_TEST=ON -DBUILD_SHARED_LIBS=OFF ..\library
 
 echo ============================================================================
 echo Compiling...
@@ -35,3 +34,6 @@ echo Installing into %INSTALL_LOCATION%
 echo ============================================================================
 cmake --build . --config Release --target INSTALL
 echo.
+
+::Delete all temporary environment variable created
+set GTEST_ROOT=
