@@ -3,5 +3,6 @@
 /clients/client3/build
 /build
 /submodules
-/installs
-/library/installs
+/install
+/install_merge
+/library/install

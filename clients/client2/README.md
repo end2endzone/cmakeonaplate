@@ -9,7 +9,7 @@ For each of the following examples, assume one wants to compile the `fooexe` exe
 ## Client #2
 If FooLib and FooExe are not installed to the same directory, the `find_package()` command will not be able to find your library automatically.
 However, if you know the installation directory of FooLib, you can instruct CMake to use this directory while searching.
-By manually specifying the FooLib's install directory, the `find_package()` command will bo able to locate FooLib's the include directories and library files.
+By manually specifying the FooLib's install directory, the `find_package()` command will be able to locate FooLib's include directories and library files.
 
 For example, on Windows, the CMake default installation directory is `C:\Program Files (x86)\${PROJECT_NAME}`. This makes the installation directory different for each projects.
 One must specify the FooLib's installation directory manually.
@@ -19,7 +19,8 @@ To specify the installation directory of the FooLib library, the following CMake
 ```cmake
 mkdir build
 cd build
-cmake -Dfoolib_DIR=<foolib_folder> ..
+set foolib_DIR=<foolib_folder>
+cmake  ..
 ```
 
 The `CMakeLists.txt` configuration file should look like this:

@@ -4,7 +4,7 @@ project(FooClient)
 # tell CMake to also search for modules in ${PROJECT_SOURCE_DIR}/cmake
 list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
 
-find_package(foolib 3.6.5 REQUIRED)
+find_package(foolib 0.1.0 REQUIRED)
 
 message(foolib_FOUND= ${foolib_FOUND})
 message(foolib_LIBRARY= ${foolib_LIBRARY})

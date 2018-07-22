@@ -28,7 +28,7 @@
 #
 # ::
 #
-#    find_package(FOOLIB 3.6.5 REQUIRED)
+#    find_package(FOOLIB 0.1.0 REQUIRED)
 #    add_executable(myexe main.cpp)
 #    target_include_directories(myexe PUBLIC ${FOOLIB_INCLUDE_DIRS})
 #    target_link_libraries(myexe ${FOOLIB_LIBRARIES})
@@ -42,12 +42,6 @@
 # See also 
 # https://github.com/forexample/package-example
 # https://stackoverflow.com/a/19302766
-
-
-
-
-#include(C:/Temp/usr/local/lib/FooLib-3.6.9/foolib-targets.cmake)
-
 
 
 #####################################################################
@@ -72,7 +66,7 @@ file(GLOB FOOLIB_SEARCH_PATHS
 # Find include directory
 unset(FOOLIB_INCLUDE_DIR CACHE)
 find_path(FOOLIB_INCLUDE_DIR 
-  NAMES "FooLib/foo.h"
+  NAMES "FooLib/foolib.h"
   HINTS
     ENV FOOLIB_DIR
     ENV FOOLIB_ROOT

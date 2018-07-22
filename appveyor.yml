@@ -59,7 +59,7 @@ configuration: Release
 before_build:
 - cmd: call %APPVEYOR_BUILD_FOLDER%\ci\appveyor\install_googletest.bat
 
-build:
+build_script:
 - cmd: call %APPVEYOR_BUILD_FOLDER%\ci\appveyor\build_library.bat
 - cmd: call %APPVEYOR_BUILD_FOLDER%\ci\appveyor\build_client1.bat
 - cmd: call %APPVEYOR_BUILD_FOLDER%\ci\appveyor\build_client2.bat

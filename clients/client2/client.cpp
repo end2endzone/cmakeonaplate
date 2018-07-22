@@ -1,8 +1,8 @@
-#include "FooLib/foo.h"
+#include "FooLib/foolib.h"
 #include <cstdio>
 
 int main(void)
 {
-  foo();
+  sayHello();
   return 0;
 }
