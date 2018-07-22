@@ -9,7 +9,7 @@ if "%APPVEYOR_BUILD_FOLDER%"=="" (
 ::Copy all installed packages to the same directory
 set MERGED_INSTALL_DIR=%APPVEYOR_BUILD_FOLDER%\install_merge
 mkdir %MERGED_INSTALL_DIR% >NUL 2>NUL
-xcopy /S /Y %APPVEYOR_BUILD_FOLDER%\submodules\googletest\install %MERGED_INSTALL_DIR%
+xcopy /S /Y %APPVEYOR_BUILD_FOLDER%\third_parties\googletest\install %MERGED_INSTALL_DIR%
 xcopy /S /Y %APPVEYOR_BUILD_FOLDER%\library\install %MERGED_INSTALL_DIR%
 
 echo ============================================================================

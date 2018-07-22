@@ -2,7 +2,7 @@
 /clients/client2/build
 /clients/client3/build
 /build
-/submodules
 /install
 /install_merge
 /library/install
+/third_parties

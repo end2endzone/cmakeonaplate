@@ -6,7 +6,7 @@ if "%APPVEYOR_BUILD_FOLDER%"=="" (
   exit /B 1
 )
 
-set GTEST_ROOT=%APPVEYOR_BUILD_FOLDER%\submodules\googletest\install
+set GTEST_ROOT=%APPVEYOR_BUILD_FOLDER%\third_parties\googletest\install
 set FOOLIB_DIR=%APPVEYOR_BUILD_FOLDER%\library\install
 echo FOOLIB_DIR=%FOOLIB_DIR%
 

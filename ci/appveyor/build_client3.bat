@@ -6,7 +6,7 @@ if "%APPVEYOR_BUILD_FOLDER%"=="" (
   exit /B 1
 )
 
-set GTEST_ROOT=%APPVEYOR_BUILD_FOLDER%\submodules\googletest\install
+set GTEST_ROOT=%APPVEYOR_BUILD_FOLDER%\third_parties\googletest\install
 
 ::Copy install package to a known directory
 set PROGRAMFILES_INSTALL_DIR=C:\Program Files (x86)\FooLib
