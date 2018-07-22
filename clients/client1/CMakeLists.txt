@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.0)
 project(FooClient)
 
-find_package(foolib 0.1.0 REQUIRED)
+find_package(foolib 0.1.1 REQUIRED)
 
 message(foolib_FOUND= ${foolib_FOUND})
 message(foolib_LIBRARY= ${foolib_LIBRARY})

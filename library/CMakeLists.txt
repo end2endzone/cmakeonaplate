@@ -39,7 +39,7 @@ set(   LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
 # Product version according to Semantic Versioning v2.0.0 https://semver.org/
 set(FOOLIB_VERSION_MAJOR 0)
 set(FOOLIB_VERSION_MINOR 1)
-set(FOOLIB_VERSION_PATCH 0)
+set(FOOLIB_VERSION_PATCH 1)
 set(FOOLIB_VERSION ${FOOLIB_VERSION_MAJOR}.${FOOLIB_VERSION_MINOR}.${FOOLIB_VERSION_PATCH})
 
 # version.h file
