@@ -1,27 +1,6 @@
-TODO:
-* Create a client that uses CMAKE_MODULE_PATH variable to search for Findfoolib.cmake.
-* Integrate GTest with submodule compiled independently using https://stackoverflow.com/a/44649433
-* Remove duplicated define FOOLIB_BUILT_AS_STATIC from foo_export.h.
-  Modify config.h to use `#ifdef FOOLIB_BUILT_AS_SHARED` then `#include "export.h"` statements.
-  Make foo.h always include `config.h` and add the following to foo.h:
-```
-#ifndef FOOLIB_EXPORT
-#  define FOOLIB_EXPORT
-#endif
-```
-
 CHECKLIST:
 # See the following for reference:
-# https://stackoverflow.com/questions/47497917/exporting-specific-symbols-using-cmake
-# https://github.com/KhronosGroup/SPIRV-Tools/pull/930 (for CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS)
-# https://blog.kitware.com/create-dlls-on-windows-without-declspec-using-new-cmake-export-all-feature/
-# https://stackoverflow.com/questions/16982144/cmake-and-generateexportheader?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
-# http://dominoc925.blogspot.com/2016/08/use-cmake-to-help-build-and-use-windows.html
-# https://cmake.org/cmake/help/v3.0/module/GenerateExportHeader.html
 # http://gernotklingler.com/blog/creating-using-shared-libraries-different-compilers-different-operating-systems/
 # https://github.com/gklingler/sharedLibsDemo
-# https://stackoverflow.com/questions/21163188/most-simple-but-complete-cmake-example
-# https://stackoverflow.com/questions/40029551/how-does-cmake-determine-the-fallback-build-configuration-for-target-dependencie
+
 # https://foonathan.net/blog/2016/03/03/cmake-install.html
-# https://rix0r.nl/blog/2015/08/13/cmake-guide/#importing-external-libraries
-# 
