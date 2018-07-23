@@ -1,5 +1,5 @@
 #include "TestFooLib.h"
-#include "FooLib\foolib.h"
+#include "FooLib/foolib.h"
 
 namespace test
 {

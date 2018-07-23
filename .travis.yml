@@ -1,0 +1,31 @@
+dist: trusty
+sudo: false
+language: cpp
+os:
+- linux
+branches:
+  only:
+  - master
+env:
+  global:
+  - GOOGLETEST_HOME=$TRAVIS_BUILD_DIR/lib/googletest
+
+script:
+- cd $TRAVIS_BUILD_DIR/ci/travis;
+  source install_googletest.sh;
+- cd $TRAVIS_BUILD_DIR/ci/travis;
+  source build_library.sh;
+- cd $TRAVIS_BUILD_DIR/ci/travis;
+  source build_client1.sh;
+- cd $TRAVIS_BUILD_DIR/ci/travis;
+  source build_client2.sh;
+- cd $TRAVIS_BUILD_DIR/ci/travis;
+  source build_client3.sh;
+- cd bin;
+  ./footest || true; #do not fail build even if a test fails.
+
+after_success:
+- echo AFTER SUCCESS!
+
+notifications:
+  email: true
