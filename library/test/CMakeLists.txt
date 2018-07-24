@@ -12,12 +12,17 @@ add_executable(footest
   TestFooLib.cpp
 )
 
+# Unit test projects requires to link with pthread if also linking with gtest
+if(NOT WIN32)
+  set(PTHREAD_LIBRARIES -pthread)
+endif()
+
 # Force CMAKE_DEBUG_POSTFIX for executables
 set_target_properties(footest PROPERTIES DEBUG_POSTFIX ${CMAKE_DEBUG_POSTFIX})
 
 target_include_directories(footest PUBLIC ${GTEST_INCLUDE_DIR})
 add_dependencies(footest foolib)
-target_link_libraries(footest foolib ${GTEST_LIBRARIES})
+target_link_libraries(footest PUBLIC foolib ${PTHREAD_LIBRARIES} ${GTEST_LIBRARIES} )
 
 install(TARGETS footest
         EXPORT foolib-targets

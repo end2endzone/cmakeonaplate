@@ -5,7 +5,7 @@ if [ "$TRAVIS_BUILD_DIR" = "" ]; then
 fi
 
 echo ============================================================================
-echo Cloning googletest into %TRAVIS_BUILD_DIR%\third_parties\googletest
+echo Cloning googletest into $TRAVIS_BUILD_DIR/third_parties/googletest
 echo ============================================================================
 mkdir $TRAVIS_BUILD_DIR/third_parties >/dev/null 2>/dev/null
 cd $TRAVIS_BUILD_DIR/third_parties
@@ -23,7 +23,7 @@ echo ===========================================================================
 mkdir build >/dev/null 2>/dev/null
 cd build
 export GTEST_ROOT=$TRAVIS_BUILD_DIR/third_parties/googletest/install
-cmake -DCMAKE_INSTALL_PREFIX=$GTEST_ROOT -DCMAKE_BUILD_TYPE=Release ..
+cmake -DCMAKE_INSTALL_PREFIX=$GTEST_ROOT -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=OFF ..
 cmake --build .
 echo
 

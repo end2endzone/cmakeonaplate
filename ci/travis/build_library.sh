@@ -24,9 +24,9 @@ echo
 echo ============================================================================
 echo Installing into $INSTALL_LOCATION
 echo ============================================================================
-cmake --build .  --target INSTALL
+make install
 echo
 
-::Delete all temporary environment variable created
+# Delete all temporary environment variable created
 unset GTEST_ROOT
 unset INSTALL_LOCATION
