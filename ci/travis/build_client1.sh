@@ -1,3 +1,6 @@
+# Any commands which fail will cause the shell script to exit immediately
+set -e
+
 # Validate Travis CI environment
 if [ "$TRAVIS_BUILD_DIR" = "" ]; then
   echo "Please define 'TRAVIS_BUILD_DIR' environment variable.";
@@ -6,7 +9,7 @@ fi
 
 # Copy all installed packages to the same directory
 export MERGED_INSTALL_DIR=$TRAVIS_BUILD_DIR/install_merge
-mkdir %MERGED_INSTALL_DIR% >/dev/null 2>/dev/null
+mkdir $MERGED_INSTALL_DIR >/dev/null 2>/dev/null
 cp -a $TRAVIS_BUILD_DIR/third_parties/googletest/install/. $MERGED_INSTALL_DIR/
 cp -a $TRAVIS_BUILD_DIR/library/install/. $MERGED_INSTALL_DIR/
 
