@@ -22,7 +22,7 @@ echo ===========================================================================
 echo Compiling...
 echo ============================================================================
 cmake --build .
-echo.
+echo
 
-::Delete all temporary environment variable created
+# Delete all temporary environment variable created
 unset MERGED_INSTALL_DIR

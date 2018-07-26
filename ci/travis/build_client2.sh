@@ -11,7 +11,7 @@ echo FOOLIB_DIR=$FOOLIB_DIR
 echo ============================================================================
 echo Generating...
 echo ============================================================================
-cd /d $TRAVIS_BUILD_DIR/clients/client2
+cd $TRAVIS_BUILD_DIR/clients/client2
 mkdir build >/dev/null 2>/dev/null
 cd build
 cmake -DCMAKE_BUILD_TYPE=Release ..
@@ -20,8 +20,8 @@ echo ===========================================================================
 echo Compiling...
 echo ============================================================================
 cmake --build .
-echo.
+echo
 
-::Delete all temporary environment variable created
+# Delete all temporary environment variable created
 unset GTEST_ROOT
 unset FOOLIB_DIR

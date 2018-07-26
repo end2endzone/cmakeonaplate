@@ -21,7 +21,7 @@ script:
   source build_client2.sh;
 - cd $TRAVIS_BUILD_DIR/ci/travis;
   source build_client3.sh;
-- cd bin;
+- cd $TRAVIS_BUILD_DIR/build/bin;
   ./footest || true; #do not fail build even if a test fails.
 
 after_success:

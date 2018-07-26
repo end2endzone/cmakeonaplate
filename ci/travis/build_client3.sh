@@ -23,8 +23,8 @@ echo ===========================================================================
 echo Compiling...
 echo ============================================================================
 cmake --build .
-echo.
+echo
 
-::Delete all temporary environment variable created
+# Delete all temporary environment variable created
 unset GTEST_ROOT
 unset PROGRAMFILES_INSTALL_DIR
