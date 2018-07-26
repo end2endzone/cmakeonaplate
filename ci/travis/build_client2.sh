@@ -4,8 +4,8 @@ if [ "$TRAVIS_BUILD_DIR" = "" ]; then
   exit 1;
 fi
 
-set GTEST_ROOT=$TRAVIS_BUILD_DIR/third_parties/googletest/install
-set FOOLIB_DIR=$TRAVIS_BUILD_DIR/library/install
+export GTEST_ROOT=$TRAVIS_BUILD_DIR/third_parties/googletest/install
+export FOOLIB_DIR=$TRAVIS_BUILD_DIR/library/install
 echo FOOLIB_DIR=$FOOLIB_DIR
 
 echo ============================================================================

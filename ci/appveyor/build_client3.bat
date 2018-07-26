@@ -8,7 +8,7 @@ if "%APPVEYOR_BUILD_FOLDER%"=="" (
 
 set GTEST_ROOT=%APPVEYOR_BUILD_FOLDER%\third_parties\googletest\install
 
-::Copy install package to a known directory
+::Copy install package to CMake's CMAKE_INSTALL_PREFIX default directory
 set PROGRAMFILES_INSTALL_DIR=C:\Program Files (x86)\FooLib
 mkdir "%PROGRAMFILES_INSTALL_DIR%" >NUL 2>NUL
 xcopy /S /Y %APPVEYOR_BUILD_FOLDER%\library\install "%PROGRAMFILES_INSTALL_DIR%"

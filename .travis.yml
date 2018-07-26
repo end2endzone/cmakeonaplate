@@ -12,15 +12,15 @@ env:
 
 script:
 - cd $TRAVIS_BUILD_DIR/ci/travis;
-  source install_googletest.sh;
+  ./install_googletest.sh;
 - cd $TRAVIS_BUILD_DIR/ci/travis;
-  source build_library.sh;
+  ./build_library.sh;
 - cd $TRAVIS_BUILD_DIR/ci/travis;
-  source build_client1.sh;
+  ./build_client1.sh;
 - cd $TRAVIS_BUILD_DIR/ci/travis;
-  source build_client2.sh;
+  ./build_client2.sh;
 - cd $TRAVIS_BUILD_DIR/ci/travis;
-  source build_client3.sh;
+  ./build_client3.sh;
 - cd $TRAVIS_BUILD_DIR/build/bin;
   ./footest || true; #do not fail build even if a test fails.
 

@@ -6,10 +6,10 @@ fi
 
 set GTEST_ROOT=$TRAVIS_BUILD_DIR/third_parties/googletest/install
 
-::Copy install package to a known directory
+# Copy install package to CMake's CMAKE_INSTALL_PREFIX default directory
 export PROGRAMFILES_INSTALL_DIR=/usr/local
 # mkdir $PROGRAMFILES_INSTALL_DIR >/dev/null 2>/dev/null
-cp -a $TRAVIS_BUILD_DIR/library/install/. $PROGRAMFILES_INSTALL_DIR
+sudo cp -a $TRAVIS_BUILD_DIR/library/install/. $PROGRAMFILES_INSTALL_DIR
 
 echo ============================================================================
 echo Generating...
