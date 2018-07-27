@@ -56,7 +56,6 @@ file(GLOB FOOLIB_SEARCH_PATHS
   "C:/Program Files/FooLib/*/FooLib-*"
   "$ENV{LOCALAPPDATA}/FooLib/*/FooLib-*"
   "$ENV{USERPROFILE}/Documents/FooLib/*/FooLib-*"
-  "C:/Temp/usr/local/*/FooLib-*"
 )
 
 ####################################################################################################################

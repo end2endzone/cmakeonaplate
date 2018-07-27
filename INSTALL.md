@@ -8,7 +8,7 @@ To install the compiled binaries, run the following commands according the your 
 
 On the Windows platform, run the following command:
 ```cmake
-cmake --build . --config <config> --target install
+cmake --build . --config <config> --target INSTALL
 ```
 
 Note: the default installation path is `C:\Program Files (x86)\FooLib`.
