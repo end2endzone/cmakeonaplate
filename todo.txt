@@ -1,6 +1,0 @@
-CHECKLIST:
-# See the following for reference:
-# http://gernotklingler.com/blog/creating-using-shared-libraries-different-compilers-different-operating-systems/
-# https://github.com/gklingler/sharedLibsDemo
-
-# https://foonathan.net/blog/2016/03/03/cmake-install.html

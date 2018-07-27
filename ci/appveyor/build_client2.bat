@@ -7,8 +7,8 @@ if "%APPVEYOR_BUILD_FOLDER%"=="" (
 )
 
 set GTEST_ROOT=%APPVEYOR_BUILD_FOLDER%\third_parties\googletest\install
-set FOOLIB_DIR=%APPVEYOR_BUILD_FOLDER%\library\install
-echo FOOLIB_DIR=%FOOLIB_DIR%
+set foolib_DIR=%APPVEYOR_BUILD_FOLDER%\library\install
+echo foolib_DIR=%foolib_DIR%
 
 echo ============================================================================
 echo Generating...
@@ -26,4 +26,4 @@ echo.
 
 ::Delete all temporary environment variable created
 set GTEST_ROOT=
-set FOOLIB_DIR=
+set foolib_DIR=
