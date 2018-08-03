@@ -1,18 +1,16 @@
-file(GLOB_RECURSE headers ${CMAKE_SOURCE_DIR}/include/*.h)
+file(GLOB_RECURSE FOOLIB_HEADER_FILES ${CMAKE_SOURCE_DIR}/include/*.h)
 
 add_library(foolib
-  ${headers}
+  ${FOOLIB_HEADER_FILES}
   ${FOOLIB_EXPORT_HEADER}
   ${FOOLIB_VERSION_HEADER}
   ${FOOLIB_CONFIG_HEADER}
   foolib.cpp
 )
 
-target_include_directories(foolib PUBLIC
-  $<BUILD_INTERFACE:${FOOLIB_INCLUDE_DIR}/include>   # for headers when building
-  $<BUILD_INTERFACE:${CMAKE_BINARY_DIR}>             # for ${FOOLIB_EXPORT_HEADER} when building
-  $<INSTALL_INTERFACE:${FOOLIB_INSTALL_INCLUDE_DIR}> # for client in install mode
-  $<INSTALL_INTERFACE:${FOOLIB_INSTALL_LIB_DIR}>     # for ${FOOLIB_EXPORT_HEADER} in install mode)
+target_include_directories(foolib 
+  PUBLIC
+    $<INSTALL_INTERFACE:${FOOLIB_INSTALL_INCLUDE_DIR}>  # for clients using the installed library.
 )
 
 install(TARGETS foolib

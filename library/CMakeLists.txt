@@ -39,7 +39,7 @@ set(   LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
 # Product version according to Semantic Versioning v2.0.0 https://semver.org/
 set(FOOLIB_VERSION_MAJOR 0)
 set(FOOLIB_VERSION_MINOR 1)
-set(FOOLIB_VERSION_PATCH 1)
+set(FOOLIB_VERSION_PATCH 2)
 set(FOOLIB_VERSION ${FOOLIB_VERSION_MAJOR}.${FOOLIB_VERSION_MINOR}.${FOOLIB_VERSION_PATCH})
 
 # version.h file
@@ -75,15 +75,16 @@ if(NOT CMAKE_DEBUG_POSTFIX)
   set(CMAKE_DEBUG_POSTFIX "-d")
 endif()
 
-# Prevents anoying warnings on MSVC
+# Prevents annoying warnings on MSVC
 if (WIN32)
   add_definitions(-D_CRT_SECURE_NO_WARNINGS)
 endif()
 
+# Define include directories for source code.
+# The specified values will not be exported.
 set( FOOLIB_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/include )
-include_directories(${FOOLIB_INCLUDE_DIR}                 # public header files
-                    ${CMAKE_BINARY_DIR}/include           # for version.h included from *.cpp files
-                    ${CMAKE_BINARY_DIR}/include/FooLib    # for export.h included by public foolib.h
+include_directories(${FOOLIB_INCLUDE_DIR}                 # public header files, for source code.
+                    ${CMAKE_BINARY_DIR}/include/FooLib    # for ${FOOLIB_EXPORT_HEADER} and ${FOOLIB_CONFIG_HEADER} generated files.
 )
 
 # Subprojects
