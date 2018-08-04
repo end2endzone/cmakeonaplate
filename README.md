@@ -58,7 +58,7 @@ For starting a new project (or integrating into an existing project), one shall 
 Copy the files of the `library` directory to the location of a new project. Proceed with the 'search and replace' operation to rename all variables, files and functions as specified above.
 
 As a reference, the following files should be updated:
-* /library/cmake/foolib-config.cmake
+* /library/cmake/foolib-config.cmake.in
 * /library/cmake/foolib-config-version.cmake.in
 * /library/CMakeLists.txt
 * /library/include/FooLib

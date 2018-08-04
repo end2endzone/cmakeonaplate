@@ -39,7 +39,7 @@ set(   LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
 # Product version according to Semantic Versioning v2.0.0 https://semver.org/
 set(FOOLIB_VERSION_MAJOR 0)
 set(FOOLIB_VERSION_MINOR 1)
-set(FOOLIB_VERSION_PATCH 3)
+set(FOOLIB_VERSION_PATCH 4)
 set(FOOLIB_VERSION ${FOOLIB_VERSION_MAJOR}.${FOOLIB_VERSION_MINOR}.${FOOLIB_VERSION_PATCH})
 
 # version.h file
@@ -121,16 +121,19 @@ endif()
 #   On UNIX, installs to "/usr/local".
 #   On Windows, installs to "C:\Program Files (x86)\${PROJECT_NAME}" or to "C:\Program Files\${PROJECT_NAME}" for 64 bit binaries
 
-# Version config verification file
+# Target config version verification file
 configure_file(${CMAKE_SOURCE_DIR}/cmake/foolib-config-version.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/cmake/foolib-config-version.cmake @ONLY)
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/cmake/foolib-config-version.cmake DESTINATION ${FOOLIB_INSTALL_CMAKE_DIR})
+
+# Target config file
+configure_file(${CMAKE_SOURCE_DIR}/cmake/foolib-config.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/cmake/foolib-config.cmake @ONLY)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/cmake/foolib-config.cmake DESTINATION ${FOOLIB_INSTALL_CMAKE_DIR})
 
 install(DIRECTORY ${CMAKE_SOURCE_DIR}/include/FooLib DESTINATION ${FOOLIB_INSTALL_INCLUDE_DIR})
 install(FILES ${FOOLIB_EXPORT_HEADER}
               ${FOOLIB_VERSION_HEADER}
               ${FOOLIB_CONFIG_HEADER}
               DESTINATION ${FOOLIB_INSTALL_INCLUDE_DIR}/FooLib)
-install(FILES ${CMAKE_SOURCE_DIR}/cmake/foolib-config.cmake DESTINATION ${FOOLIB_INSTALL_CMAKE_DIR})
 install(EXPORT foolib-targets DESTINATION ${FOOLIB_INSTALL_CMAKE_DIR})
 
 ##############################################################################################################################################
